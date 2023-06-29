@@ -18,7 +18,9 @@ app.get('/directory', (req, res) => {
     fs.readdir(directoryPath, { withFileTypes: true}, (err, files) => {
         if (err) {
             console.error(err);
-            return res.status(500).json({ error: 'Failed to read directory'});
+            return res.status(500).json({ 
+                error: 'Failed to read directory'
+            });
         }
 
         const directoryListing = files.map((file) => {
